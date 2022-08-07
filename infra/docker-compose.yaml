@@ -11,8 +11,7 @@ services:
       - ./.env
 
   web:
-    build: 
-      context: ../api_yamdb/
+    image: shilsny/web_yamdb
 
     restart: always
 
