@@ -13,4 +13,5 @@ class TitleFilterBackend(filters.BaseFilterBackend):
             queryset = queryset.filter(category__slug=category_slug)
         if name:
             queryset = queryset.filter(name__icontains=name)
+
         return queryset
