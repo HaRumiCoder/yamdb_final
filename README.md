@@ -1,4 +1,4 @@
-# YaMDb ![Workflow](https://github.com/HaRumiCoder/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+# YaMDb ![](https://github.com/HaRumiCoder/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 ## Описание проекта
