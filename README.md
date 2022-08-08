@@ -1,4 +1,4 @@
-# YaMDb
+# YaMDb ![Workflow](https://github.com/HaRumiCoder/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 ## Описание проекта
@@ -77,19 +77,18 @@ ____
 
 ``` docker-compose exec web python manage.py createsuperuser ```
 
-> в готовой фикстуре уже имеется супер юзер с данными
-
-> login: admin25
-> password: qwerty1
-
 ``` docker-compose exec web python manage.py collectstatic --no-input ```
 
 - Далее проект будет доступен по адресу *http://localhost/*
 
 
 ____
-## Заполнение базы данными
+## Workflow 
 
-В репозитории имеется готовая фикстура с несколькими записями. Загрузить ее можно с помощью команды
+В репозитории настроены приложения Continuous Integration и Continuous Deployment
 
-``` docker-compose exec web python manage.py loaddata fixtures.json ```
+Реализованы:
+
+- автоматический запуск тестов
+- обновление образов на Docker Hub
+- автоматический деплой на боевой сервер при пуше в главную ветку main
