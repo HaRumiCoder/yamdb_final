@@ -1,5 +1,6 @@
 # YaMDb ![](https://github.com/HaRumiCoder/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
+Проект доступен по ссылке http://84.201.176.127/
 
 ## Описание проекта
 
@@ -81,6 +82,16 @@ ____
 
 - Далее проект будет доступен по адресу *http://localhost/*
 
+В репозитории имеется готовая фикстура с несколькими записями. Загрузить ее можно с помощью команды
+
+``` docker-compose exec web python manage.py loaddata fixtures.json ```
+
+> в готовой фикстуре уже имеется супер юзер с данными
+
+> login: admin25
+> password: qwerty1
+
+
 
 ____
 ## Workflow 
@@ -92,3 +103,8 @@ ____
 - автоматический запуск тестов
 - обновление образов на Docker Hub
 - автоматический деплой на боевой сервер при пуше в главную ветку main
+
+___
+## Автор
+
+Софья Шилова https://github.com/HaRumiCoder
