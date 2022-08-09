@@ -86,7 +86,8 @@ ____
 
 ``` docker-compose exec web python manage.py loaddata fixtures.json ```
 
-> в готовой фикстуре уже имеется супер юзер с данными
+
+> в фикстуре уже имеется суперюзер с данными
 
 > login: admin25
 > password: qwerty1
