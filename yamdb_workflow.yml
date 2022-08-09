@@ -23,6 +23,7 @@ jobs:
       - name: Test with flake8 and pytest
         run: |
           python -m flake8
+          pytest
 
   build_and_push_to_docker_hub:
     runs-on: ubuntu-latest
@@ -51,6 +52,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
+    if: ${{ github.ref == 'refs/heads/master' }} or  %{{ github.ref == 'refs/heads/main' }}
     steps:
       - name: executing remote ssh command to deploy
         uses: appleboy/ssh-action@master 
@@ -62,6 +64,7 @@ jobs:
           script: |
             sudo docker-compose stop
             sudo docker-compose rm web
+            sudo docker image rm shilsny/web_yamdb
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -69,6 +72,7 @@ jobs:
             echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+            echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
             sudo docker-compose up -d
   send_message:
     runs-on: ubuntu-latest
